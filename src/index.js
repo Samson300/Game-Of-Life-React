@@ -24,8 +24,8 @@ class Grid extends React.Component {
         var rowsArr = [];
 
         var boxClass = "";
-        for (var i = 0; i < 30; i++) {
-            for (var j = 0; j < 50; j++) {
+        for (var i = 0; i < this.props.rows; i++) {
+            for (var j = 0; j < this.props.cols; j++) {
                 // console.log("this think is on")
                 let boxId = i + j;
                 boxClass = this.props.gridFull[i][j] ? "box on" : "box off";
@@ -72,7 +72,7 @@ class Main extends React.Component {
                 <Grid 
                 gridFull={this.state.gridFull}
                 rows={this.rows}
-                cols={this.cos}
+                cols={this.cols}
                 selectBox={this.selextBox}
                 />
                     <h2>Generations: {this.state.generation}</h2>
