@@ -25,7 +25,6 @@ class Grid extends React.Component {
     render() {
         const width = this.props.cols * 16;
         var rowsArr = [];
-
         var boxClass = "";
         for (var i = 0; i < this.props.rows; i++) {
             for (var j = 0; j < this.props.cols; j++) {
@@ -42,7 +41,6 @@ class Grid extends React.Component {
                         selectBox={this.props.selectBox}
                         
                     />
-                    
                 );
             }
         }
@@ -94,7 +92,7 @@ class Main extends React.Component {
 
     playButton = () => {
         clearInterval(this.intervalId)
-        this.intervalId = setInterval(this.playButton, this.speed);
+        this.intervalId = setInterval(this.play, this.speed);
     }
 
     play = () => {
@@ -126,6 +124,7 @@ class Main extends React.Component {
 // Populates Grid when first loaded
     componentDidMount() {
         this.seed();
+        this.playButton();
     }
 
     render() {
