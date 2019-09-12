@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+
+// Each Box represents a cell
 class Box extends React.Component {
     selectBox = () => {
         this.props.selectBox(this.props.row, this.props.col);
@@ -27,9 +29,9 @@ class Grid extends React.Component {
         var boxClass = "";
         for (var i = 0; i < this.props.rows; i++) {
             for (var j = 0; j < this.props.cols; j++) {
-                // console.log("this think is on")
                 let boxId = i + j;
                 boxClass = this.props.gridFull[i][j] ? "box on" : "box off";
+// Adds Box to array forming the Grid
                 rowsArr.push(
                     <Box 
                         boxClass={boxClass}
@@ -75,6 +77,7 @@ class Main extends React.Component {
 
     }
 
+// Function for randomly populating the Grid
     seed = () => {
         let gridCopy = arrayClone(this.state.gridFull);
         for (let i=0; i< this.rows; i++){
@@ -98,6 +101,7 @@ class Main extends React.Component {
         let g = this.state.gridFull;
         let g2 = arrayClone(this.state.gridFull);
 
+// Checks to see if the cell has a neighbor
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++) {
                 let count = 0;
@@ -119,6 +123,7 @@ class Main extends React.Component {
         });
     }
 
+// Populates Grid when first loaded
     componentDidMount() {
         this.seed();
     }
