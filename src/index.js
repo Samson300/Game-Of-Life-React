@@ -2,4 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-ReactDOM.render(<p>Hello</p>, document.getElementById('root'));
+class Main extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            generation: 0
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>The Game Of Life</h1>
+                
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<Main />, document.getElementById('root'));
