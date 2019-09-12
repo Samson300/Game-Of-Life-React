@@ -27,7 +27,7 @@ class Grid extends React.Component {
         for (var i = 0; i < 30; i++) {
             for (var j = 0; j < 50; j++) {
                 // console.log("this think is on")
-                let boxId = i + "_" + j;
+                let boxId = i + j;
                 boxClass = this.props.gridFull[i][j] ? "box on" : "box off";
                 rowsArr.push(
                     <Box 
