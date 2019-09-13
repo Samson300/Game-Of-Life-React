@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap';
+import { ButtonToolbar, DropdownButton, DropdownItem } from 'react-bootstrap';
 
 
 // Each Box represents a cell
@@ -86,9 +86,9 @@ class Buttons extends React.Component {
                         id="size-menu"
                         onSelect={this.handleSelect}
                     >
-                        <MenuItem eventKey="1">20x10</MenuItem>
-                        <MenuItem eventKey="2">50x30</MenuItem>
-                        <MenuItem eventKey="3">70x50</MenuItem>
+                        <DropdownItem eventKey="1">20x10</DropdownItem>
+                        <DropdownItem eventKey="2">50x30</DropdownItem>
+                        <DropdownItem eventKey="3">70x50</DropdownItem>
                     </DropdownButton>
                 </ButtonToolbar>
             </div>
@@ -199,16 +199,25 @@ class Main extends React.Component {
         return (
             <div>
                 <h1>The Game Of Life</h1>
-                <Buttons 
-                    playButton={this.playButton}
-                />
+
                 <Grid 
                 gridFull={this.state.gridFull}
                 rows={this.rows}
                 cols={this.cols}
                 selectBox={this.selectBox}
                 />
-                    <h2>Generations: {this.state.generation}</h2>
+
+                <h2>Generations: {this.state.generation}</h2>
+                
+                <Buttons 
+                    playButton={this.playButton}
+                    pauseButton={this.pauseButton}
+                    slow={this.slow}
+                    fast={this.fast}
+                    clear={this.clear}
+                    seed={this.seed}
+                    gridSize={this.gridSize}
+                />
             </div>
         );
     }
