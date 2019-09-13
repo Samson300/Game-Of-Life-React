@@ -64,6 +64,9 @@ class Buttons extends React.Component {
                     <button className="button" onClick={this.props.pauseButton}>
                         Pause
                     </button>
+                    <button className="button" onClick={this.props.clear}>
+                        Clear
+                    </button>
                 </ButtonToolbar>
             </div>
         )
@@ -114,6 +117,10 @@ class Main extends React.Component {
 
     pauseButton = () => {
         clearInterval(this.intervalId);
+    }
+
+    clear = () => {
+        var grid = Array(this.rows).fill().map(() => Array(this.cols).fill(false));
     }
 
     play = () => {
