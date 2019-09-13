@@ -61,6 +61,9 @@ class Buttons extends React.Component {
                     <button className="button" onClick={this.props.playButton}>
                         Play
                     </button>
+                    <button className="button" onClick={this.props.pauseButton}>
+                        Pause
+                    </button>
                 </ButtonToolbar>
             </div>
         )
@@ -107,6 +110,10 @@ class Main extends React.Component {
     playButton = () => {
         clearInterval(this.intervalId)
         this.intervalId = setInterval(this.play, this.speed);
+    }
+
+    pauseButton = () => {
+        clearInterval(this.intervalId);
     }
 
     play = () => {
