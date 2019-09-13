@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { ButtonToolbar } from 'react-bootstrap';
 
 
 // Each Box represents a cell
@@ -53,9 +54,15 @@ class Grid extends React.Component {
 }
 
 class Buttons extends React.Component {
-    reder() {
+    render() {
         return(
-            
+            <div className="center">
+                <ButtonToolbar>
+                    <button className="button" onClick={this.props.playButton}>
+                        Play
+                    </button>
+                </ButtonToolbar>
+            </div>
         )
     }
 }
