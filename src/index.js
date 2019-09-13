@@ -73,6 +73,9 @@ class Buttons extends React.Component {
                     <button className="button" onClick={this.props.fast}>
                         Fast
                     </button>
+                    <button className="button" onClick={this.props.seed}>
+                        Seed
+                    </button>
                 </ButtonToolbar>
             </div>
         )
