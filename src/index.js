@@ -39,7 +39,6 @@ class Grid extends React.Component {
                         row={i}
                         col={j}
                         selectBox={this.props.selectBox}
-                        
                     />
                 );
             }
@@ -50,6 +49,14 @@ class Grid extends React.Component {
                 {rowsArr}
             </div>
         );
+    }
+}
+
+class Buttons extends React.Component {
+    reder() {
+        return(
+            
+        )
     }
 }
 
@@ -131,6 +138,9 @@ class Main extends React.Component {
         return (
             <div>
                 <h1>The Game Of Life</h1>
+                <Buttons 
+                    playButton={this.playButton}
+                />
                 <Grid 
                 gridFull={this.state.gridFull}
                 rows={this.rows}
