@@ -109,6 +109,7 @@ class Main extends React.Component {
         }
     }
 
+// Function for adding or taking away a green box
     selectBox = (row, col) => {
         let gridCopy = arrayClone(this.state.gridFull);
         gridCopy[row][col] = !gridCopy[row][col];
@@ -118,7 +119,8 @@ class Main extends React.Component {
 
     }
 
-// Function for randomly populating the Grid
+// Functions for buttons
+// Randomly populates the Grid
     seed = () => {
         let gridCopy = arrayClone(this.state.gridFull);
         for (let i=0; i< this.rows; i++){
