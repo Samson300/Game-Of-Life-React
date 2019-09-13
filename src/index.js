@@ -70,6 +70,9 @@ class Buttons extends React.Component {
                     <button className="button" onClick={this.props.slow}>
                         Slow
                     </button>
+                    <button className="button" onClick={this.props.fast}>
+                        Fast
+                    </button>
                 </ButtonToolbar>
             </div>
         )
@@ -127,8 +130,16 @@ class Main extends React.Component {
         this.playButton();
     }
 
+    fast = () => {
+        this.speed = 10
+    }
+
     clear = () => {
         var grid = Array(this.rows).fill().map(() => Array(this.cols).fill(false));
+        this.setState({
+            gridFull: grid,
+            generation: 0
+        })
     }
 
     play = () => {
