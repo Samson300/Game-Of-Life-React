@@ -67,6 +67,9 @@ class Buttons extends React.Component {
                     <button className="button" onClick={this.props.clear}>
                         Clear
                     </button>
+                    <button className="button" onClick={this.props.slow}>
+                        Slow
+                    </button>
                 </ButtonToolbar>
             </div>
         )
