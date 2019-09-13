@@ -55,9 +55,9 @@ class Grid extends React.Component {
 
 class Buttons extends React.Component {
 
-    hadleSelect = (evt) => {
-        this.props.gridSize(evt);
-    }
+    // handleSelect = (evt) => {
+    //     this.props.gridSize(evt);
+    // }
 
     render() {
         return(
@@ -159,9 +159,22 @@ class Main extends React.Component {
         })
     }
 
-    gridSize = (size) => {
-
-    }
+    // gridSize = (size) => {
+    //     switch (size) {
+    //         case "1":
+    //             this.cols = 20;
+    //             this.rows = 10;
+    //         break;
+    //         case "2":
+    //             this.cols = 50;
+    //             this.rows = 30;
+    //         break;
+    //         default:
+    //             this.cols = 70;
+    //             this.rows = 50;
+    //     }
+    //     this.clear();
+    // }
 
     play = () => {
         let g = this.state.gridFull;
